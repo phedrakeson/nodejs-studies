@@ -19,7 +19,7 @@
   "homepage": "https://github.com/phedrakeson/nodejs-studies#readme",
   "dependencies": {
     "axios": "^0.25.0",
-    "express": "^3.21.2"
+    "express": "^4.17.2"
   },
   "devDependencies": {}
 }
