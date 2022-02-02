@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+<%- include('includes/head.ejs') %>
 <body>
-  <script src="./assets/js/bundle.js"></script>
-</body>
-</html>
+  <h1>
+     
+    <% if(typeof titulo !== 'undefined') { %>
+        <%= titulo %>
+    <%  } else { %>
+      O titulo não foi enviado
+    <% } %>
+    <br>
+    <%= titulo %><br>
+    <%- titulo %>
+
+    <% numeros.forEach(num => { %>
+      <%= num %>
+    <% }) %>
+    <br>
+    <br>
+    <%= variavelLocal %>
+  </h1>
+<%- include('includes/footer') %>
