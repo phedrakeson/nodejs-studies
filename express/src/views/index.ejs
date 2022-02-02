@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <%- include('includes/head.ejs') %>
-<body>
   <h1>
      
     <% if(typeof titulo !== 'undefined') { %>
@@ -19,4 +17,13 @@
     <br>
     <%= variavelLocal %>
   </h1>
+
+  <section>
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label>Nome</label>
+      <input type="text" name="cliente">
+      <button>Submit</button>
+    </form>
+  </section>
 <%- include('includes/footer') %>

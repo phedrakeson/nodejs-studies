@@ -6,5 +6,6 @@ exports.paginaInicial = (req, res) => {
 }
 
 exports.trataFormulario = (req, res) => {
-  res.send('Sou sua nova rota!')
+  console.log(req.body);
+  res.send(req.body);
 }

@@ -31,11 +31,19 @@ app.use(flash());
 const routes = require('./routes');
 const path = require('path');
 const middleware = require('./src/middlewares/middleware');
+const csrferrorMiddleware = require('./src/middlewares/csrferror-middleware');
+const csrfMiddleware = require('./src/middlewares/csrf-middleware');
+const helmet = require('helmet');
+const CSRF = require('csurf');
 
+app.use(helmet());
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}))
+app.use(CSRF());
+app.use(csrfMiddleware)
+app.use(csrferrorMiddleware);
 app.use(middleware);
 app.use(routes);
 
